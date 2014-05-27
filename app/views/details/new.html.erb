@@ -1,0 +1,50 @@
+<h1>New Article</h1>
+
+<%= form_for :details, url: details_path do |f|  %>
+  <p>
+     Public? yes
+      <%= f.radio_button :public, true, :checked => true %>
+      no
+      <%= f.radio_button :public, false%>
+      <p>
+        Title
+   <%= f.text_field  :title, :value => "Choose a clear name that describes your experience the best in 5-100 character"%>
+     
+      </p>
+      Description
+      <%= f.text_area  :description %>
+        </p>
+        Pricing
+       <%= f.number_field  :priceNumber %>
+       <%= f.select :pricePer, [[:Person,"Person"],[:Group,"Group"],[:Hour,"Hour"],[:Day,"Day"]], :selected => [:Person,"Person"] %>
+  </p>
+          </p>
+        What's included
+        <%= f.text_area  :whatInclude %>
+         </p>
+        What's NOT included
+        <%= f.text_area  :whatExclude %>
+         </p>
+         Duration
+        <%= f.select :groupSize, ((1..12).map {|i| [i,i] }.insert 0, ["Please select",nil]), :selected => ["Please select",nil] %>
+        <%= f.select :durationDayOrHour, [[:Hours,true],[:Days,false]], :selected => [:Hours,true]%>
+         </p>
+         Group Size
+           <%= f.select :groupSize, ((1..30).map {|i| [i,i] }.insert 0, ["Please select",nil]), :selected => ["Please select",nil] %>
+           </p>
+      Availability
+      <%= f.text_area  :availability %>
+       Additional Information
+      <%= f.text_area  :additionalInfo%>
+  </p>
+ 
+  <p>
+ 
+  
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>

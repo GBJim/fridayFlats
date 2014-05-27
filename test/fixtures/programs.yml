@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  when: MyText
+  what: MyText
+  details_id: 
+
+two:
+  when: MyText
+  what: MyText
+  details_id: 

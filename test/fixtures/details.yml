@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  public: false
+  title: MyString
+  description: MyText
+  priceNumber: 1
+  pricePer: MyString
+  whatInclude: MyText
+  whatExclude: MyText
+  durationTime: 1
+  durationDayOrHour: false
+  groupSize: 1
+  availability: MyText
+  additionalInfo: MyText
+
+two:
+  public: false
+  title: MyString
+  description: MyText
+  priceNumber: 1
+  pricePer: MyString
+  whatInclude: MyText
+  whatExclude: MyText
+  durationTime: 1
+  durationDayOrHour: false
+  groupSize: 1
+  availability: MyText
+  additionalInfo: MyText
