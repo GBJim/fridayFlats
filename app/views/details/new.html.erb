@@ -3,9 +3,9 @@
 <%= form_for :details, url: details_path do |f|  %>
   <p>
      Public? yes
-      <%= f.radio_button :public, true, :checked => true %>
+      <%= f.radio_button :public, "1", :checked => true %>
       no
-      <%= f.radio_button :public, false%>
+      <%= f.radio_button :public, "0" %>
       <p>
         Title
    <%= f.text_field  :title, :value => "Choose a clear name that describes your experience the best in 5-100 character"%>
