@@ -1,10 +1,16 @@
-<h1>New Article</h1>
+<%= javascript_include_tag :defaults, :cache => true %>
 
-<%= form_for :details, url: details_path do |f|  %>
+
+<h1>Experience</h1>
+
+<%= form_for @detail, url: details_path do |f|  %>
+<p>
+    <%= f.label :category %><br />
+    <%= f.collection_select(:categoryID, @categories, :id, :name, :include_blank => "Please select") %>
   <p>
-     Public? yes
+     Public
       <%= f.radio_button :public, "1", :checked => true %>
-      no
+      Private
       <%= f.radio_button :public, "0" %>
       <p>
         Title
@@ -16,6 +22,7 @@
         </p>
         Pricing
        <%= f.number_field  :priceNumber %>
+       € per 
        <%= f.select :pricePer, [[:Person,"Person"],[:Group,"Group"],[:Hour,"Hour"],[:Day,"Day"]], :selected => [:Person,"Person"] %>
   </p>
           </p>
@@ -38,8 +45,19 @@
       <%= f.text_area  :additionalInfo%>
   </p>
  
-  <p>
- 
+  Program
+
+
+  <p class = "fields">
+ <%= f.fields_for :programs  do |builder|  %>
+ <%= builder.text_area  :when%>
+ <%= builder.text_area  :what%>
+ <%= builder.hidden_field  :_destroy%>
+ <%= link_to  "remove", '#',:onclick => 'alert("hey")'%>
+</p>
+<% end %>
+
+
   
   </p>
  

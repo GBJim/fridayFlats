@@ -1,11 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  when: MyText
-  what: MyText
-  detail_id: 
+  name: MyString
 
 two:
-  when: MyText
-  what: MyText
-  detail_id: 
+  name: MyString

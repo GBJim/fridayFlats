@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140527062757) do
+ActiveRecord::Schema.define(version: 20140528071354) do
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "details", force: true do |t|
     t.boolean  "public"
@@ -28,6 +34,17 @@ ActiveRecord::Schema.define(version: 20140527062757) do
     t.text     "additionalInfo"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "categoryID"
   end
+
+  create_table "programs", force: true do |t|
+    t.text     "when"
+    t.text     "what"
+    t.integer  "detail_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "programs", ["detail_id"], name: "index_programs_on_detail_id", using: :btree
 
 end
